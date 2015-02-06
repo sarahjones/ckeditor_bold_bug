@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CkeditorBoldBug</title>
+  <style>
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+
+<h1>CkEditor test</h1>
+
+<p>Problem with configuring bold</p>
+
+
+<div id="editor_here" style="padding: 2em; border: 1px solid black">YO DAWG</div>
+
+
+<script>
+  var CKEDITOR_BASEPATH = '/js/ckeditor/';
+</script>
+<script src="/js/ckeditor/ckeditor.js"></script>
+<script>
+  var editor = CKEDITOR.inline(document.getElementById('editor_here'), {
+    title: '',
+    enterMode: CKEDITOR.ENTER_DIV,
+    allowedContent: true,
+    coreStyles_bold: {
+      element: 'div',
+      attributes: { class: 'bold' }
+    }
+  });
+  editor.on('instanceReady', function () {
+    editor.setReadOnly(false);
+  });
+</script>
+
+
+</body>
+</html>
