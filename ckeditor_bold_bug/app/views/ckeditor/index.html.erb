@@ -1,6 +1,9 @@
 <%= content_for :javascript do %>
   <script>
-    ckeditorInitializers.initFullEditor($('.editor_here'));
+    var editor = ckeditorInitializers.initFullEditor($('.editor_here'));
+    editor.on('instanceReady', function () {
+      editor.setReadOnly(false);
+    });
   </script>
 <% end %>
 
@@ -9,4 +12,4 @@
 <p>Problem with configuring bold</p>
 
 
-<div class="editor_here"></div>
+<div class="editor_here" style="padding: 2em; border: 1px solid black">YO DAWG</div>

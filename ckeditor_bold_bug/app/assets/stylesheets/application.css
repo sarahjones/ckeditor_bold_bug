@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require ckeditor/skins/moono/editor
  */
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
